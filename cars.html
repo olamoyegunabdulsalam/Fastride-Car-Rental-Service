@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fastride-Cars</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap_5/css/bootstrap.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg p-2 sticky-top shadow" data-aos="fade-down">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-2" href="">Fastride</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between " id="mynavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link fw-bold m-3 " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold m-3" href="cars.html">Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold m-3" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold m-3" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <button class="book-btn" type="button" data-bs-toggle="modal" data-bs-target="#bookingModal"><i
+            class="fas fa-user me-2"></i> Book Online</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header  -->
+  <div class="cars-bg py-5 bg-dark text-white text-center">
+    <h1 class="display-2 fw-bold mb-3">
+      Our Premium Fleet
+    </h1>
+    <p class="lead fs-2">Choose from our wide selection of luxury and economy vehicles</p>
+  </div>
+
+  <!-- Filter Buttons  -->
+  <div class="container text-center my-4">
+    <button class="btn btn-outline-success filter-btn" data-category="All">All</button>
+    <button class="btn btn-outline-success filter-btn" data-category="Luxury">Luxury</button>
+    <button class="btn btn-outline-success filter-btn" data-category="Economy">Economy</button>
+    <button class="btn btn-outline-success filter-btn" data-category="SUV">SUV</button>
+    <button class="btn btn-outline-success filter-btn" data-category="Sports">Sports</button>
+  </div>
+
+
+  <div class="container my-5">
+    <div class="row gy-4" id="car-list">
+      <div class="col-lg-4 col-md-6" data-category="Economy">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Toyota Yaris.jpg" height="200px" alt="Toyota Yaris">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Toyota Yaris</h4>
+              <div>
+                <span class="badge rounded-pill bg-warning p-2">Economy</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <span><b>Features:</b> Compact, fuel-efficient, Bluetooth</span><br>
+              <span><b>Best For:</b> City driving, solo trips</span>
+            </div>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦50,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="Economy">
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Hyundai_i20.png" height="200px" alt="Hyundai_i20">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Hyundai i20</h4>
+              <div>
+                <span class="badge rounded-pill bg-warning p-2">Economy</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <span><b>Features:</b> Great mileage, AC, USB ports</span><br>
+              <span><b>Best For:</b> Short trips, students</span>
+            </div>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦45,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="Economy">
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Kia_Picanto.png" height="200px" alt="Kia_Picanto">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Kia Picanto</h4>
+              <div>
+                <span class="badge rounded-pill bg-warning p-2">Economy</span>
+              </div>
+            </div>
+            <div class="py-1">
+              <span><b>Features:</b> Cheap, easy parking, basic tech</span><br>
+              <span><b>Best For:</b> Budget travelers</span>
+            </div>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Manual
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦55,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUV Section  -->
+      <div class="col-lg-4 col-md-6" data-category="SUV">
+        <div class="card" data-aos="fade-up" data-aos-delay="400">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Toyota_RAV4.png" height="200px" alt="Toyota_RAV4">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Toyota RAV4</h4>
+              <div>
+                <span class="badge rounded-pill bg-primary p-2">SUV</span>
+              </div>
+            </div>
+            <span><b>Features:</b> All-wheel drive, spacious </span><br>
+            <span><b>Best For:</b> Family vacations, off-road</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Hybrid
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦75,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="SUV">
+        <div class="card" data-aos="fade-up" data-aos-delay="500">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Nissan_Qashqai.png" height="200px" alt="Nissan_Qashqai">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Nissan Qashqai</h4>
+              <div>
+                <span class="badge rounded-pill bg-primary p-2">SUV</span>
+              </div>
+            </div>
+            <span><b>Features:</b> Compact SUV, good fuel economy</span><br>
+            <span><b>Best For:</b> Urban adventures</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦70,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="SUV">
+        <div class="card" data-aos="fade-up" data-aos-delay="600">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Range_Rover_Evoque.png" height="200px" alt="Range_Rover_Evoque">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Range Rover Evoque</h4>
+              <div>
+                <span class="badge rounded-pill bg-primary p-2">SUV</span>
+              </div>
+            </div>
+            <span><b>Features:</b> Luxury SUV, high-tech features</span><br>
+            <span><b>Best For:</b> Premium travel</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦85,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sports Section  -->
+      <div class="col-lg-4 col-md-6" data-category="Sports">
+        <div class="card"data-aos="fade-up" data-aos-delay="700" >
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Ford_Mustang.png" height="200px" alt="Ford_Mustang">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Ford Mustang</h4>
+              <div>
+                <span class="badge rounded-pill bg-danger p-2">Sport</span>
+              </div>
+            </div>
+            <span><b>Features:</b> Iconic muscle car, powerful V8</span><br>
+            <span><b>Best For:</b> Weekend getaways</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>4 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦90,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="Sports">
+        <div class="card"data-aos="fade-up" data-aos-delay="800" >
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Porsche_911.png" height="200px" alt="Porsche_911">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Porsche 911</h4>
+              <div>
+                <span class="badge rounded-pill bg-danger p-2">Sport</span>
+              </div>
+            </div>
+            <span><b>Features:</b> High-performance, convertible</span><br>
+            <span><b>Best For:</b> Special occasions</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>2-4 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦85,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="Sports">
+        <div class="card"data-aos="fade-up" data-aos-delay="900" >
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Chevrolet Camaro.jpg" height="180px" alt="Chevrolet Camaro">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Chevrolet Camaro</h4>
+              <div>
+                <span class="badge rounded-pill bg-danger p-2">Sport</span>
+              </div>
+            </div>
+            <span><b>Features:</b> Aggressive styling, sporty</span><br>
+            <span><b>Best For:</b> Car enthusiasts</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>4 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦95,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luxury Section  -->
+      <div class="col-lg-4 col-md-6" data-category="Luxury">
+        <div class="card" data-aos="fade-up" data-aos-delay="1000">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Mercedes Benz C Class.jpg" height="200px" alt="Mercedes-Benz">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Mercedes C-Class</h4>
+              <div>
+                <span class="badge rounded-pill bg-info p-2">Luxury</span>
+              </div>
+            </div>
+            <span><b>Features:</b> Leather seats, panoramic roof</span><br>
+            <span><b>Best For:</b> Weddings, VIP trips</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Diesel
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦110,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="Luxury">
+        <div class="card" data-aos="fade-up" data-aos-delay="1100">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Audi_A5.png" height="200px" alt="Audi_A5">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Audi A5</h4>
+              <div>
+                <span class="badge rounded-pill bg-info p-2">Luxury</span>
+              </div>
+            </div>
+            <span><b>Features:</b> Sleek design, Quattro AWD</span><br>
+            <span><b>Best For:</b> Business executives</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>4 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Petrol
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦110,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="Luxury">
+        <div class="card" data-aos="fade-up" data-aos-delay="1200">
+          <div style="height: 200px;" class="d-flex justify-content-center align-items-center">
+            <img src="images/Tesla_Model_3.png" height="200px" alt="Tesla_Model_3">
+          </div>
+          <hr>
+          <div class="px-3 mb-3">
+            <div class="d-flex justify-content-between">
+              <h4>Tesla Model 3</h4>
+              <div>
+                <span class="badge rounded-pill bg-info p-2">Luxury</span>
+              </div>
+            </div>
+            <span><b>Features:</b> Autopilot, eco-friendly</span><br>
+            <span><b>Best For:</b> Tech lovers, eco-conscious</span>
+            <div class="text-muted">
+              <i class="fas fa-users me-1"></i>5 Seats
+              <i class="fas fa-cog ms-3 me-1"></i>Automatic
+              <i class="fas fa-gas-pump ms-3 me-1"></i>Electric
+            </div>
+            <div class="d-flex justify-content-between my-4">
+              <div>
+                <span class="h5 text-secondary">₦120,000</span>
+                <small class="text-muted">/day</small>
+              </div>
+              <button class="btn btn-success">
+                <i class="fas fa-calendar-check me-1"></i>Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer  -->
+  <footer class="py-3 px-2" style="background: var(--secondary);">
+    <div class="d-flex justify-content-center pt-3">
+      <div class="row">
+        <div class="col-sm">
+          <h3 class="fw-bold fs-1 m-0 pb-3 text-light">Fastride</h3>
+          <p class="fs-6 text-muted">We are simply outstanding because of the comfort, class, and control our clients
+            enjoy.</p>
+          <div class="my-4">
+            <i class="bi bi-facebook text-white"></i>
+            <i class="bi bi-linkedin m-2 text-white"></i>
+            <i class="bi bi-instagram m-2 text-white"></i>
+            <i class="bi bi-twitter-x text-white"></i>
+          </div>
+        </div>
+        <div class="col-sm">
+          <h5 class="fs-4 fw-bold text-light">Navigation</h5>
+          <p><a href="cars.html" class="text-decoration-none link fw-bold">Cars</a></p>
+          <p><a href="index.html" class="text-decoration-none link fw-bold">Home</a></p>
+          <p><a href="contact.html" class="text-decoration-none link fw-bold">Contact</a></p>
+        </div>
+        <div class="col-sm">
+          <h5 class="fs-4 fw-bold text-light">Careers</h5>
+          <p><a href="about.html" class="text-decoration-none link fw-bold">About Us</a></p>
+          <p class="link fw-bold">Privacy Policy</p>
+          <p class="link fw-bold">Terms & Conditions</p>
+        </div>
+        <div class="col-sm m-0">
+          <h5 class="fs-4 fw-bold text-light">Get In Touch</h5>
+          <p class="fw-bold text-muted"><i class="fal fa-envelope"></i> support@fastride.ng</p>
+          <p class="fw-bold text-muted"><i class="fal fa-phone"></i> +2349075025164</p>
+          <p class="fw-bold text-muted"><i class="fal fa-map-marker-alt"></i> A102 Greenville Richardson Way</p>
+        </div>
+      </div>
+    </div>
+    <h6 class="text-center pt-4 text-light"> Copy &copy; 2020 fastride. All rights reserved</h6>
+  </footer>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header text-white bg-success">
+          <h4 class="modal-title"> <i class="fas fa-calendar-check me-2"></i> Booking Details</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <!-- Personal  Information  -->
+            <div class="row mb-4">
+              <div class="col-mb-6">
+                <h5 class="text-success mb-3">Personal Information</h5>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="firstName" class="form-label">First Name *</label>
+                <input type="text" class="form-control" id="firstName" required>
+                <div class="invalid-feedback">Please provide your first name.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName" class="form-label">Last Name *</label>
+                <input type="text" class="form-control" id="lastName" required>
+                <div class="invalid-feedback">Please provide your last name.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="email" required>
+                <div class="invalid-feedback">Please provide a valid email address.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="phone" class="form-label">Phone Number *</label>
+                <input type="tel" class="form-control" id="phone" required>
+                <div class="invalid-feedback">Please provide your phone number.</div>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" rows="2" placeholder="Enter your full address"></textarea>
+              </div>
+            </div>
+
+            <!-- Rental Information -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <h5 class="text-success mb-3">Rental Information</h5>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="carSelection" class="form-label">Select Car *</label>
+                <select class="form-select" required>
+                  <option value="">Choose a car...</option>
+                  <optgroup label="Luxury Cars">
+                    <option value="Audi A5">Audi A5 - ₦110,000/day</option>
+                    <option value="Mercedes C-Class">Mercedes C-Class - ₦110,000/day</option>
+                    <option value="Tesla Model 3">Tesla Model 3 - ₦120,000/day</option>
+                  </optgroup>
+                  <optgroup label="Economy Cars">
+                    <option value="Toyota Yaris">Toyota Yaris - ₦50,000/day</option>
+                    <option value="Hyundai i20">Hyundai i20 - ₦45,000/day</option>
+                    <option value="Kia Picanto">Kia Picanto - ₦55,000/day</option>
+                  </optgroup>
+                  <optgroup label="SUVs">
+                    <option value="Toyota RAV4">Toyota RAV4 - ₦75,000/day</option>
+                    <option value="Nissan Qashqai">Nissan Qashqai - ₦70,000/day</option>
+                    <option value="Range Rover Evoque">Range Rover Evoque - ₦85,000/day</option>
+                  </optgroup>
+                  <optgroup label="Sports Cars">
+                    <option value="Ford Mustang">Ford Mustang - ₦90,000/day</option>
+                    <option value="Porsche 911">Porsche 911 - ₦85,000/day</option>
+                    <option value="Chevrolet Camaro">Chevrolet Camaro - ₦95,000/day</option>
+                  </optgroup>
+                </select>
+                <div class="invalid-feedback">Please select a car.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="rentalDuration" class="form-label">Rental Duration</label>
+                <select class="form-select" id="rentalDuration">
+                  <option value="1-3 days">1-3 days</option>
+                  <option value="4-7 days">4-7 days</option>
+                  <option value="1-2 weeks">1-2 weeks</option>
+                  <option value="1 month+">1 month+</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="pickupDate" class="form-label">Pickup Date *</label>
+                <input type="date" class="form-control" id="pickupDate" required>
+                <div class="invalid-feedback">Please select a pickup date.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="returnDate" class="form-label">Return Date *</label>
+                <input type="date" class="form-control" id="returnDate" required>
+                <div class="invalid-feedback">Please select a return date.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="pickupTime" class="form-label">Pickup Time</label>
+                <input type="time" class="form-control" id="pickupTime" value="09:00">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="returnTime" class="form-label">Return Time</label>
+                <input type="time" class="form-control" id="returnTime" value="18:00">
+              </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <h5 class="text-success mb-3">Additional Services</h5>
+              </div>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="gpsNavigation">
+                      <label class="form-check-label" for="gpsNavigation">
+                        GPS Navigation (+₦5,000/day)
+                      </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="childSeat">
+                      <label class="form-check-label" for="childSeat">
+                        Child Safety Seat (+₦8,000/day)
+                      </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="additionalDriver">
+                      <label class="form-check-label" for="additionalDriver">
+                        Additional Driver (+₦10,000/day)
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="insurance">
+                      <label class="form-check-label" for="insurance">
+                        Full Insurance Coverage (+₦15,000/day)
+                      </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="wifiHotspot">
+                      <label class="form-check-label" for="wifiHotspot">
+                        WiFi Hotspot (+₦7,000/day)
+                      </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="deliveryService">
+                      <label class="form-check-label" for="deliveryService">
+                        Car Delivery Service (+₦25,000)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <h5 class="text-success mb-3">Special Requests</h5>
+                <textarea class="form-control" id="specialRequests" rows="3"
+                  placeholder="Any special requests or additional information..."></textarea>
+              </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input text-success" type="checkbox" id="termsAccepted" required>
+                  <label class="form-check-label" for="termsAccepted">
+                    I agree to the <a href="#" class="text-success">Terms and Conditions</a> and <a href="#"
+                      class="text-success">Privacy Policy</a> *
+                  </label>
+                  <div class="invalid-feedback">You must agree to the terms and conditions.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="row">
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success btn-lg px-5">
+                  <i class="fas fa-calendar-check me-2"></i>Submit Booking Request
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cars = document.querySelectorAll('#car-list > div');
+
+    for (let i = 0; i < filterBtns.length; i++) {
+      filterBtns[ i ].addEventListener("click", function () {
+        let category = this.dataset.category;
+
+        for (let j = 0; j < cars.length; j++) {
+          if (category === "All" || cars[ j ].dataset.category === category) {
+            cars[ j ].style.display = "block";
+          } else {
+            cars[ j ].style.display = "none";
+          }
+        }
+      });
+    }
+  </script>
+  <script src="bootstrap_5/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
