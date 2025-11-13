@@ -768,25 +768,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000);
   });
 
-  /* ---------------- FILTER BUTTONS ---------------- */
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const carCards = document.querySelectorAll("#car-list .col-lg-4");
+/* ---------------- FILTER BUTTONS ---------------- */
+const filterBtns = document.querySelectorAll(".filter-btn");
+const carCards = document.querySelectorAll("#car-list .col-lg-4");
 
-  filterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const category = btn.getAttribute("data-category");
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const category = btn.getAttribute("data-category").trim();
 
-      carCards.forEach((card) => {
-        const cardCategory = card.getAttribute("data-category");
-        card.style.display =
-          category === "All" || cardCategory === category ? "flex" : "none";
-      });
+    carCards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category").trim();
 
-      // Highlight active button
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+      if (category === "All" || cardCategory === category) {
+        // Use flex to preserve Bootstrap layout
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
     });
+
+    // Highlight active button
+    filterBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
   });
+});
+
 
   /* ---------------- DYNAMIC CAR SELECTION ---------------- */
   const bookButtons = document.querySelectorAll(".card .btn-success"); // Only card buttons
@@ -813,6 +819,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
