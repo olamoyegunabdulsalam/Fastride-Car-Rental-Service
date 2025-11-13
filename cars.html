@@ -706,36 +706,61 @@
     </div>
   </div>
 
+    <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow">
+        <div class="modal-body text-center p-5">
+          <div class="text-success display-4 mb-3">✓</div>
+          <h5 class="mb-2">Booking Submitted!</h5>
+          <p class="text-muted">Thank you for your request. We’ll get back to you through your email shortly.</p>
+          <button type="button" class="btn btn-success mt-3 w-100" data-bs-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
   AOS.init();
 
-  // === Filter Functionality ===
+  const bookingForm = document.getElementById('bookingForm');
+
+  bookingForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const bookingModal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
+    bookingModal.hide();
+
+    setTimeout(() => {
+      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+      bookingForm.reset();
+    }, 400);
+  });
+
   const filterBtns = document.querySelectorAll('.filter-btn');
   const carCards = document.querySelectorAll('#car-list .col-lg-4');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const category = btn.getAttribute('data-category');
-      
       carCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
         if (category === 'All' || cardCategory === category) {
           card.style.display = 'block';
-          card.classList.add('aos-animate'); // AOS animation trigger
+          card.classList.add('aos-animate');
         } else {
           card.style.display = 'none';
         }
       });
-
-      // Highlight active button
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     });
   });
 
-  // === Dynamic Modal Car Selection ===
   const bookButtons = document.querySelectorAll('.btn-success');
   const carSelect = document.querySelector('#bookingModal select');
 
@@ -743,23 +768,19 @@
     button.addEventListener('click', event => {
       const card = button.closest('.card');
       const carName = card.querySelector('h4').innerText.trim();
-      
-      // Set the select dropdown to the car clicked
       for (let i = 0; i < carSelect.options.length; i++) {
         if (carSelect.options[i].value === carName) {
           carSelect.selectedIndex = i;
           break;
         }
       }
-
-      // Open the modal
       const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
       modal.show();
     });
   });
+});
 </script>
 </body>
-
-
 </html>
+
 
