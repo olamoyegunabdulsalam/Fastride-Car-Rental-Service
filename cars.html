@@ -769,29 +769,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 /* ---------------- FILTER BUTTONS ---------------- */
-const filterBtns = document.querySelectorAll(".filter-btn");
-const carCards = document.querySelectorAll("#car-list .col-lg-4");
 
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const category = btn.getAttribute("data-category").trim();
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cars = document.querySelectorAll('#car-list > div');
 
-    carCards.forEach((card) => {
-      const cardCategory = card.getAttribute("data-category").trim();
+    for (let i = 0; i < filterBtns.length; i++) {
+      filterBtns[ i ].addEventListener("click", function () {
+        let category = this.dataset.category;
 
-      if (category === "All" || cardCategory === category) {
-        // Use flex to preserve Bootstrap layout
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    });
-
-    // Highlight active button
-    filterBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-  });
-});
+        for (let j = 0; j < cars.length; j++) {
+          if (category === "All" || cars[ j ].dataset.category === category) {
+            cars[ j ].style.display = "block";
+          } else {
+            cars[ j ].style.display = "none";
+          }
+        }
+      });
+    }
 
 
   /* ---------------- DYNAMIC CAR SELECTION ---------------- */
@@ -819,6 +813,7 @@ filterBtns.forEach((btn) => {
 </script>
 </body>
 </html>
+
 
 
 
