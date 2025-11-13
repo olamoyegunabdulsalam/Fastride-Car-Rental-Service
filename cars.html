@@ -720,29 +720,52 @@
     </div>
   </div>
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
 
-   const bookingForm = document.getElementById('bookingForm');
+  document.addEventListener("DOMContentLoaded", function () {
+    const bookingForm = document.querySelector("#bookingModal form");
+    const bookingModal = new bootstrap.Modal(document.getElementById("bookingModal"));
 
-    bookingForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent real form submission
+    bookingForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent actual form submission
 
-      // Close booking modal
-      const bookingModal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
-      bookingModal.hide();
+      // Check if all required fields are filled
+      const requiredFields = bookingForm.querySelectorAll("[required]");
+      let valid = true;
 
-      // Wait a bit before showing success modal
+      requiredFields.forEach((field) => {
+        if (!field.value.trim()) {
+          field.classList.add("is-invalid");
+          valid = false;
+        } else {
+          field.classList.remove("is-invalid");
+        }
+      });
+
+      if (!valid) {
+        return; // stop if validation fails
+      }
+
+      // If all fields are valid — show confirmation
+      Swal.fire({
+        icon: "success",
+        title: "Booking Successful!",
+        text: "Your booking request has been received. We'll contact you soon.",
+        confirmButtonColor: "#198754",
+        timer: 4000
+      });
+
+      // Close modal and reset form after short delay
       setTimeout(() => {
-        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        successModal.show();
-
-        // Optional: Reset form after showing success
+        bookingModal.hide();
         bookingForm.reset();
-      }, 400);
+      }, 2000);
     });
+  });
+
   // === Filter Functionality ===
   const filterBtns = document.querySelectorAll('.filter-btn');
   const carCards = document.querySelectorAll('#car-list .col-lg-4');
@@ -792,6 +815,7 @@
 </script>
 </body>
 </html>
+
 
 
 
