@@ -724,65 +724,60 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+document.addEventListener("DOMContentLoaded", function () {
   AOS.init();
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const bookingForm = document.querySelector("#bookingModal form");
-    const bookingModal = new bootstrap.Modal(document.getElementById("bookingModal"));
+  /* ---------------- BOOKING FORM ---------------- */
+  const bookingForm = document.querySelector("#bookingForm");
+  const bookingModal = new bootstrap.Modal(document.getElementById("bookingModal"));
 
-    bookingForm.addEventListener("submit", function (e) {
-      e.preventDefault(); // prevent actual form submission
+  bookingForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent actual form submission
 
-      // Check if all required fields are filled
-      const requiredFields = bookingForm.querySelectorAll("[required]");
-      let valid = true;
+    // Check required fields
+    const requiredFields = bookingForm.querySelectorAll("[required]");
+    let valid = true;
 
-      requiredFields.forEach((field) => {
-        if (!field.value.trim()) {
-          field.classList.add("is-invalid");
-          valid = false;
-        } else {
-          field.classList.remove("is-invalid");
-        }
-      });
-
-      if (!valid) {
-        return; // stop if validation fails
+    requiredFields.forEach((field) => {
+      if (!field.value.trim()) {
+        field.classList.add("is-invalid");
+        valid = false;
+      } else {
+        field.classList.remove("is-invalid");
       }
-
-      // If all fields are valid — show confirmation
-      Swal.fire({
-        icon: "success",
-        title: "Booking Successful!",
-        text: "Your booking request has been received. We'll contact you soon.",
-        confirmButtonColor: "#198754",
-        timer: 4000
-      });
-
-      // Close modal and reset form after short delay
-      setTimeout(() => {
-        bookingModal.hide();
-        bookingForm.reset();
-      }, 2000);
     });
+
+    if (!valid) return;
+
+    // Success pop-up
+    Swal.fire({
+      icon: "success",
+      title: "Booking Successful!",
+      text: "Your booking request has been received. We'll contact you soon.",
+      confirmButtonColor: "#198754",
+      timer: 4000
+    });
+
+    // Close modal and reset
+    setTimeout(() => {
+      bookingModal.hide();
+      bookingForm.reset();
+    }, 2000);
   });
 
-  // === Filter Functionality ===
+  /* ---------------- FILTER BUTTONS ---------------- */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const carCards = document.querySelectorAll('#car-list .col-lg-4');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const category = btn.getAttribute('data-category');
-      
+
       carCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
-        if (category === 'All' || cardCategory === category) {
-          card.style.display = 'block';
-          card.classList.add('aos-animate'); // AOS animation trigger
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = (category === 'All' || category === cardCategory) 
+                              ? 'block' 
+                              : 'none';
       });
 
       // Highlight active button
@@ -791,7 +786,7 @@
     });
   });
 
-  // === Dynamic Modal Car Selection ===
+  /* ---------------- DYNAMIC CAR SELECTION ---------------- */
   const bookButtons = document.querySelectorAll('.btn-success');
   const carSelect = document.querySelector('#bookingModal select');
 
@@ -799,8 +794,7 @@
     button.addEventListener('click', event => {
       const card = button.closest('.card');
       const carName = card.querySelector('h4').innerText.trim();
-      
-      // Set the select dropdown to the car clicked
+
       for (let i = 0; i < carSelect.options.length; i++) {
         if (carSelect.options[i].value === carName) {
           carSelect.selectedIndex = i;
@@ -808,14 +802,16 @@
         }
       }
 
-      // Open the modal
       const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
       modal.show();
     });
   });
+
+});
 </script>
 </body>
 </html>
+
 
 
 
